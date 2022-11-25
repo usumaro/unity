@@ -11,15 +11,16 @@ public class DBAccess1 : MonoBehaviour
     public GameObject PlaceHolder;
     public GameObject Time;
 
-    public void OnClick()
+    public void Button_Push()
     {
         
         Name = GameObject.Find("Name");
         PlaceHolder = GameObject.Find("PlaceHolder");
+        
         Time = GameObject.Find("Time");
 
         if (string.IsNullOrEmpty(Name.name))
-        {PlaceHolder.GetComponent<Text>().text = "ñºëOÇ™ãÛóìÇ≈Ç∑";
+        {PlaceHolder.GetComponent<Text>().text = "ÂêçÂâç„ÅåÁ©∫Ê¨Ñ„Åß„Åô";
         }else{ StartCoroutine("Access"); }
       
     }
@@ -28,7 +29,7 @@ public class DBAccess1 : MonoBehaviour
     private IEnumerator Access()
     {
         Dictionary<string, string> dic = new Dictionary<string, string>();
-        dic.Add("time1", Time.GetComponentInChildren<InputField>().text);
+        dic.Add("time1", Time.GetComponent<Text>().text);
         dic.Add("name1", Name.GetComponentInChildren<InputField>().text);
 
 
